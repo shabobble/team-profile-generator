@@ -3,6 +3,10 @@ html {
     padding: 0px;
     box-sizing: border-box;
 }
+
+nav {
+    background-color: red;
+}
 section {
     display: flex;
     justify-content: center;

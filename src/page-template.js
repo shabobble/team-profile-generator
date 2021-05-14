@@ -4,7 +4,9 @@ const generateTeam = team => {
         <section class='manager col-md-4'>
         <div class='card' style='width: 18rem;'>
             <div class='card-header bg-info'>
-                Manager: ${manager.getName()}
+                ${manager.getName()}
+                <hr>
+                <i class="fas fa-coffee"> Manager</i>
             </div>
             <ul class='list-group list-group-flush'>
               <li class='list-group-item'>Email: ${manager.getEmail()}</li>
@@ -19,7 +21,9 @@ const generateTeam = team => {
         <section class='engineer col-md-4'>
         <div class='card' style='width: 18rem;'>
             <div class='card-header bg-info'>
-                Engineer: ${engineer.getName()}
+                ${engineer.getName()}
+                <hr>
+                <i class="fas fa-server"> Engineer</i>
             </div>
             <ul class='list-group list-group-flush'>
               <li class='list-group-item'>Email: ${engineer.getEmail()}</li>
@@ -34,7 +38,9 @@ const generateTeam = team => {
         <section class='intern col-md-4'>
         <div class='card' style='width: 18rem;'>
             <div class='card-header bg-info'>
-                Intern: ${intern.getName()}
+                ${intern.getName()}
+                <hr>
+                <i class="fas fa-graduation-cap"> Intern</i>
             </div>
             <ul class='list-group list-group-flush'>
               <li class='list-group-item'>Email: ${intern.getEmail()}</li>
@@ -60,12 +66,18 @@ module.exports = team => {
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <link rel='stylesheet' href='style.css'>
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0' crossorigin='anonymous'>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
     <title>Team Profile</title>
 </head>
 <body>
-  <nav class='navbar navbar-dark bg-dark'>
+  <nav class='navbar mb-3 py-4'>
     <div class='container-fluid justify-content-center'>
-      <span class='navbar-brand mb-0 h1'>My Team</span>
+      <span class='navbar-brand mb-0 text-light'><h2>My Team</h2></span>
     </div>
   </nav>
   <main>
