@@ -248,8 +248,7 @@ const render = require("./src/page-template")
                 fs.mkdirSync(output_dir)
             }
             fs.writeFileSync(outputPath, render(teamArray), 'utf-8')
-            console.log(outputPath)
-            console.log(teamArray)
+            console.log('Success! You may view your generated HTML page in the output folder.')
         }
 addManager();
 
