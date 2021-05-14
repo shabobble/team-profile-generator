@@ -1,7 +1,7 @@
 // const employee = require('./lib/employee');
 
 //link to HTML page
-const pageTemplate = require('./src/page-template');
+// const pageTemplate = require('./src/page-template');
 const path = require('path')
 
 //team profiles
@@ -22,7 +22,7 @@ const render = require("./src/page-template")
 
 //prompts
 
-const appMenu = () => {
+// const appMenu = () => {
     const addManager = () => {
         return inquirer
             .prompt([
@@ -241,7 +241,7 @@ const appMenu = () => {
             console.log(teamArray)
         }
 addManager();
-};
+// };
 
-appMenu();
+// appMenu();
 //gen html 

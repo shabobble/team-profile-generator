@@ -1,7 +1,7 @@
 const generateTeam = team => {
     const generateManager = manager => {
         return `
-        <section class='manager'>
+        <section class='manager col-md-4'>
         <div class='card' style='width: 18rem;'>
             <div class='card-header bg-info'>
                 Manager: ${manager.getName()}
@@ -16,7 +16,7 @@ const generateTeam = team => {
     }
     const generateEngineer = engineer => {
         return `
-        <section class='engineer'>
+        <section class='engineer col-md-4'>
         <div class='card' style='width: 18rem;'>
             <div class='card-header bg-info'>
                 Engineer: ${engineer.getName()}
@@ -31,7 +31,7 @@ const generateTeam = team => {
     }
     const generateIntern = intern => {
         return `
-        <section class='intern'>
+        <section class='intern col-md-4'>
         <div class='card' style='width: 18rem;'>
             <div class='card-header bg-info'>
                 Intern: ${intern.getName()}

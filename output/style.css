@@ -14,4 +14,10 @@ section {
 }
 .manager {
     width: 100%;
+
+}
+
+.container {
+    display: flex;
+    flex-flow: row;
 }
