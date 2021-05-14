@@ -8,7 +8,9 @@
     "test": "test"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "node index.js"
+    
   },
   "repository": {
     "type": "git",
