@@ -1,7 +1,6 @@
-// const employee = require('./lib/employee');
+
 
 //link to HTML page
-// const pageTemplate = require('./src/page-template');
 const path = require('path')
 
 //team profiles
@@ -13,6 +12,7 @@ const Intern = require('./lib/intern');
 const fs = require('fs');
 const inquirer = require('inquirer');
 
+
 //array to build team
 const teamArray = [];
 const idArray = [];
@@ -22,7 +22,7 @@ const render = require("./src/page-template")
 
 //prompts
 
-// const appMenu = () => {
+
     const addManager = () => {
         return inquirer
             .prompt([
@@ -34,7 +34,7 @@ const render = require("./src/page-template")
                         if (nameInput) {
                             return true;
                         } else {
-                            console.log("please enter the managers name to continue");
+                            console.log(" Please enter the manager's name to continue.");
                             return false;
                         }
                     }
@@ -42,24 +42,29 @@ const render = require("./src/page-template")
                 {
                     name: "id",
                     type: "input",
-                    message: "Enter the managers ID number",
-                    validate: nameInput => {
-                        if (isNaN(nameInput)) {
+                    message: "Please enter the manager's ID number.",
+                    validate: idInput => {
+                        if (isNaN(idInput)) {
+                            
+                            console.log(' That is not a number.')
                             return false;
-                        } else {
+                        } else if (!idInput) {
+                            return false;
+                        } else
                             return true;
-                        }
                     }
+                        
+                    
                 },
                 {
                     type: "input",
                     name: "email",
-                    message: "please enter the managers email to continue",
-                    validate: nameInput => {
-                        if (nameInput) {
+                    message: "Please enter the manager's e-mail address.",
+                    validate: emailInput => {
+                        if (emailInput) {
                             return true
                         } else {
-                            console.log("please enter managers email to continue")
+                            console.log(" Please enter the manager's e-mail address to continue.")
                             return false;
                         }
                     }
@@ -67,11 +72,13 @@ const render = require("./src/page-template")
                 {
                     type: "input",
                     name: "officeNumber",
-                    message: "what is the managers office number?",
-                    validate: nameInput => {
-                        if (isNaN(nameInput)) {
-                            console.log('please enter numbers to continue')
+                    message: "What is the manager's office number?",
+                    validate: officeNumberInput => {
+                        if (isNaN(officeNumberInput)) {
+                            console.log(' Please enter a valid office number to continue.')
                             return false;
+                        } else if (!officeNumberInput) {
+                            return false
                         } else {
                             return true;
                         }
@@ -92,15 +99,15 @@ const render = require("./src/page-template")
             {
                 type: "list",
                 name: "role",
-                message: "choose the employees role",
-                choices: ['engineer', 'intern', 'no one else to add']
+                message: "Choose the next employee's role.",
+                choices: ['Engineer', 'Intern', "I'm done!"]
             }
         ]).then(userChoice => {
             switch (userChoice.role) {
-                case "engineer":
+                case "Engineer":
                     addEngineer();
                     break;
-                case "intern":
+                case "Intern":
                     addIntern();
                     break;
                 default:
@@ -113,12 +120,12 @@ const render = require("./src/page-template")
             {
                 type: "input",
                 name: "name",
-                message: "what is the engineers name?",
+                message: "What is the engineer's name?",
                 validate: nameInput => {
                     if (nameInput) {
                         return true;
                     } else {
-                        console.log("please enter engineers name to continue")
+                        console.log(" Please enter the engineer's name to continue.")
                         return false;
                     }
                 }
@@ -126,11 +133,13 @@ const render = require("./src/page-template")
             {
                 type: "input",
                 name: "id",
-                message: "enter engineers ID number",
-                validate: nameInput => {
-                    if (isNaN(nameInput)) {
-                        console.log("please enter numbers to continue")
+                message: "Enter the engineer's ID number.",
+                validate: idInput => {
+                    if (isNaN(idInput)) {
+                        console.log(" That is not a number.")
                         return false;
+                    } else if (!idInput) {
+                        return false
                     } else {
                         return true;
                     }
@@ -139,12 +148,12 @@ const render = require("./src/page-template")
             {
                 type: "input",
                 name: "email",
-                message: "please enter the engineers email to continue",
+                message: "Please enter the engineer's e-mail address.",
                 validate: emailInput => {
                     if (emailInput) {
                         return true
                     } else {
-                        console.log("please enter engineers email to continue")
+                        console.log(" Please enter the engineer's e-mail address to continue.")
                         return false;
                     }
                 }
@@ -152,12 +161,12 @@ const render = require("./src/page-template")
             {
                 type: "input",
                 name: "github",
-                message: "please enter the engineers github username to continue",
-                validate: nameInput => {
-                    if (nameInput) {
+                message: "Please enter the engineer's Github username.",
+                validate: githubInput => {
+                    if (githubInput) {
                         return true
                     } else {
-                        console.log("please enter engineers github username to continue")
+                        console.log(" Please enter the engineer's Github username to continue.")
                     }
                 }
             },
@@ -170,17 +179,17 @@ const render = require("./src/page-template")
             addEmployee();
         })
     }
-        const addIntern = () => {
+    const addIntern = () => {
             inquirer.prompt([
                 {
                     type: "input",
                     name: "name",
-                    message: "what is the interns name?",
+                    message: "What is the intern's name?",
                     validate: nameInput => {
                         if (nameInput) {
                             return true;
                         } else {
-                            console.log("please enter interns name to continue")
+                            console.log(" Please enter the intern's name to continue.")
                             return false;
                         }
                     }
@@ -188,11 +197,13 @@ const render = require("./src/page-template")
                 {
                     type: "input",
                     name: "id",
-                    message: "enter interns ID number",
-                    validate: nameInput => {
-                        if (isNaN(nameInput)) {
-                            console.log("please enter numbers to continue")
+                    message: "Please enter the intern's ID number.",
+                    validate: idInput => {
+                        if (isNaN(idInput)) {
+                            console.log(" That is not a number.")
                             return false;
+                        } else if (!idInput) {
+                            return false
                         } else {
                             return true;
                         }
@@ -201,12 +212,12 @@ const render = require("./src/page-template")
                 {
                     type: "input",
                     name: "email",
-                    message: "please enter the interns email to continue",
+                    message: "Please enter the intern's e-mail address to continue",
                     validate: emailInput => {
                         if (emailInput) {
                             return true
                         } else {
-                            console.log("please enter interns email to continue")
+                            console.log(" Please enter the intern's e-mail address to continue.")
                             return false;
                         }
                     }
@@ -214,12 +225,12 @@ const render = require("./src/page-template")
                 {
                     type: "input",
                     name: "school",
-                    message: "please enter the interns school to continue",
-                    validate: nameInput => {
-                        if (nameInput) {
+                    message: "Please enter the intern's school.",
+                    validate: schoolInput => {
+                        if (schoolInput) {
                             return true
                         } else {
-                            console.log("please enter interns school username to continue")
+                            console.log(" Please enter the name of the intern's school to continue.")
                         }
                     }
                 },
@@ -232,7 +243,7 @@ const render = require("./src/page-template")
                 addEmployee();
             })
         };
-        const buildTeam = () => {
+    const buildTeam = () => {
             if (!fs.existsSync(output_dir)) {
                 fs.mkdirSync(output_dir)
             }
@@ -241,7 +252,4 @@ const render = require("./src/page-template")
             console.log(teamArray)
         }
 addManager();
-// };
 
-// appMenu();
-//gen html 
