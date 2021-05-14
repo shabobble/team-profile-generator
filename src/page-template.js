@@ -24,7 +24,7 @@ const generateTeam = team => {
             <ul class='list-group list-group-flush'>
               <li class='list-group-item'>Email: ${engineer.getEmail()}</li>
               <li class='list-group-item'>Employee ID: ${engineer.getId()}</li>
-              <li class='list-group-item'>Github: ${engineer.getGithub()}</li>
+              <li class='list-group-item'>Github: <a href='${engineer.getGithub()}'>${engineer.getGithub()}</a></li>
             </ul>
           </div>
         </section>`
@@ -69,7 +69,11 @@ module.exports = team => {
     </div>
   </nav>
   <main>
+  <div class='container-fluid'>
+  <div class='row'>
      ${generateTeam(team)}
+     </div>
+     </div>
   </main>
     <script src='../index.js'></script>
 </body>
