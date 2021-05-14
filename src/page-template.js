@@ -28,7 +28,7 @@ const generateTeam = team => {
             <ul class='list-group list-group-flush'>
               <li class='list-group-item'>Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
               <li class='list-group-item'>Employee ID: ${engineer.getId()}</li>
-              <li class='list-group-item'>Github: <a href='${engineer.getGithub()}'>${engineer.getGithub()}</a></li>
+              <li class='list-group-item'>Github: <a href='${engineer.getGithub()}' target='_blank'>${engineer.getGithub()}</a></li>
             </ul>
           </div>
         </section>`
